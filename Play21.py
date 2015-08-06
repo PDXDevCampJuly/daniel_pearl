@@ -146,13 +146,14 @@ class BlackJack:
                 each_player.hit(self.deck.dealCard())
             self.dealer.hit(self.deck.dealCard())
 
-
-
-        #choice == "hit"
-        # while self.playerList.score != 21:# and choice=="hit":
-        #     for player in playerList:
-        #         choice = input("{} , would you like to hit or stay? ".format(player))
-
+        choice = "hit"
+        for each_player in self.playerList:
+            while choice == "hit" and each_player.score() < 21:
+                choice = input("hit of stay: ")
+                if choice:
+                    each_player.hit(self.deck.dealCard())
+                else:
+                    break
 
         # Dealer.showHand()
 # """
