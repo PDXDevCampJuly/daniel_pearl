@@ -113,11 +113,17 @@ class Dealer:
             result += card.int_value
         if result == 21:
             print("Dealer has Blackjack.")
-            # self.showHand()
             return result
-        else:
-            # self.showHand()
-            return result - self.dealerHand[0].int_value
+        elif result > 21:
+             for i in self.dealerHand:
+                 if i.int_value == 11:
+                     i.int_value -= 10
+                     break
+             result = 0
+             for card in self.dealerHand:
+                 result += card.int_value
+        return result #- self.dealerHand[0].int_value
+
 
 class BlackJack:
     def __init__(self, num_players):
