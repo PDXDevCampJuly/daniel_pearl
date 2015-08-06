@@ -74,8 +74,15 @@ class Player:
         result = 0
         for card in self.playerHand:
             result += card.int_value
+        if result > 21:
+            for i in self.playerHand:
+                if i.int_value == 11:
+                    i.int_value -= 10
+                    break
+            result = 0
+            for card in self.playerHand:
+                result += card.int_value
         return result
-
 
 class Dealer:
     """
@@ -106,10 +113,10 @@ class Dealer:
             result += card.int_value
         if result == 21:
             print("Dealer has Blackjack.")
-            self.showHand()
+            # self.showHand()
             return result
         else:
-            self.showHand()
+            # self.showHand()
             return result - self.dealerHand[0].int_value
 
 class BlackJack:
@@ -132,10 +139,12 @@ class BlackJack:
     def tableResults(self):
         #print(self.dealer.showHand())
         # print("Sum total is {}".format(self.dealer.score()))
+        print("-------------------------------------------------")
         for eachPlayer in self.playerList:
             eachPlayer.showHand()
-            print("Sum total is {}".format(eachPlayer.score()))
+            print(">>> Sum total is {}\n".format(eachPlayer.score()))
         self.dealer.partialHand()
+        print("-------------------------------------------------")
 
     def takeTurn(self, choice, each_player):
         while choice == "hit":
@@ -143,24 +152,28 @@ class BlackJack:
                 print("{} has Twenty one".format(each_player.playerName))
                 choice = False
             elif each_player.score() > 21:
-                print("{} has busted".format(each_player.playerName))
+                print("{} has busted\n".format(each_player.playerName))
                 choice = False
             else:
                 choice = input("{}, Hit or Stay >>> ".format(each_player.playerName))
                 if choice == "hit":
                     each_player.hit(self.deck.dealCard())
                     each_player.showHand()
-                    print("Sum total is {}".format(each_player.score()))
+                    print(">>> Sum total is {}\n".format(each_player.score()))
                 else:
+                    print("\n")
                     break
 
     def dealerTurn(self):
         while self.dealer.score() < 17:
             self.dealer.hit(self.deck.dealCard())
         self.dealer.showHand()
-        print("Sum total is {}".format(self.dealer.score()))
+        print(">>> Sum total is {}".format(self.dealer.score()))
         if self.dealer.score() > 21:
-            print("{} has busted".format(dealerName))
+            print("{} has busted".format(self.dealer.dealerName))
+
+    def tableSummary(self):
+        pass
 
     # launches the game
     def startGame(self):
