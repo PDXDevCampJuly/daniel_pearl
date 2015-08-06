@@ -103,22 +103,30 @@ class BlackJack:
             playerName = input("Input Name: ")
             newPlayer = Player(playerName)
             self.playerList.append(newPlayer)
+        #print(self.playerList)
+
 
     # launches the game
-    def startGame():
-        count = 0
-        for i in range(2):
-            for each_player in playerList + count:
-                each_player.hit()
-                count += 1
-            dealer.hit()
+    def startGame(self):
+        for i in range(2): #Deals 2 cards
+            for each_player in self.playerList: #Deals to each player
+                each_player.hit(self.deck.dealCard())
 
-        print(playerList1)
+            self.dealer.hit(self.deck.dealCard())
+        print(self.playerList[0].showHand())
+        print(self.dealer.showHand())
 
-        for each_player in range(playerList):
-            each_player.showHand()
-        dealer.show()
+        # Dealer.showHand()
+# """
+            #dealer.hit()
 
+#
+
+#
+#         for each_player in range(playerList):
+#             each_player.showHand()
+#         dealer.show()
+# """
 
 
 # TESTS
