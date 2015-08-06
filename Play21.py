@@ -139,6 +139,40 @@ class BlackJack:
             eachPlayer.showHand()
             print("Sum total is {}".format(eachPlayer.score()))
 
+    def takeTurn(self, choice, each_player):
+        while choice == "hit":
+            if each_player.score() == 21:
+                print("{} has Twenty one".format(each_player.playerName))
+                choice = False
+            elif each_player.score() > 21:
+                print("{} has busted".format(each_player.playerName))
+                choice = False
+            else:
+                choice = input("{}, Hit or Stay >>> ".format(each_player.playerName))
+                if choice == "hit":
+                    each_player.hit(self.deck.dealCard())
+                    each_player.showHand()
+                    print("Sum total is {}".format(each_player.score()))
+                else:
+                    break
+
+    def dealerTurn(self, choice):
+        while choice == "hit":
+            if self.dealer.score() == 21:
+                print("{} has Twenty one".format(self.dealer.dealerName))
+                choice = False
+            elif self.dealer.score() > 21:
+                print("{} has busted".format(self.dealer.dealerName))
+                choice = False
+            else:
+                choice = input("{}, Hit or Stay >>> ".format(self.dealer.dealerName))
+                if choice == "hit":
+                    self.dealer.hit(self.deck.dealCard())
+                    self.dealer.showHand()
+                    print("Sum total is {}".format(self.dealer.score()))
+                else:
+                    break
+
     # launches the game
     def startGame(self):
         for i in range(2): #Deals 2 cards for the first hand
@@ -146,14 +180,18 @@ class BlackJack:
                 each_player.hit(self.deck.dealCard())
             self.dealer.hit(self.deck.dealCard())
 
-        choice = "hit"
+        #Show Table Results
+        self.tableResults()
+
+        # run through each player turns
         for each_player in self.playerList:
-            while choice == "hit" and each_player.score() < 21:
-                choice = input("hit of stay: ")
-                if choice:
-                    each_player.hit(self.deck.dealCard())
-                else:
-                    break
+            choice = "hit"
+            self.takeTurn(choice, each_player)
+
+        # automate the dealer's turn
+        # self.dealerTurn(choice)
+
+
 
         # Dealer.showHand()
 # """
@@ -188,6 +226,3 @@ class BlackJack:
 
 
 newGame = BlackJack(2)
-
-
-newGame.tableResults()
