@@ -92,14 +92,13 @@ class Dealer:
 
     # displays the dealer's 'partial' hand hiding the first card in the list
     def partialHand(self):
-        print("{}'s cards: ".format(dealerName), end = " ")
+        print("{}'s hand: ".format(self.dealerName), end = " ")
         print("Hidden card &", end = " ")
         print(self.dealerHand[1:])
 
     # displays the dealer's hand
     def showHand(self):
         print("{}'s hand: ".format(self.dealerName), end = " ")
-        print("Hidden card &", end = " ")
         print(self.dealerHand[:])
 
 
@@ -133,8 +132,8 @@ class BlackJack:
         #print(self.playerList)
 
     def tableResults(self):
-        print(self.dealer.showHand())
-        print(self.dealer.score())
+        #print(self.dealer.showHand())
+        print("Sum total is {}".format(self.dealer.score()))
 
         for eachPlayer in self.playerList:
             eachPlayer.showHand()
