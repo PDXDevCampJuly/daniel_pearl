@@ -70,6 +70,13 @@ class Player:
         print("Player cards: ", end = " ")
         print(self.playerHand)
 
+    def score(self):
+        result = 0
+        for card in self.playerHand:
+            result += card.int_value
+        return result
+
+
 class Dealer:
     """
     Make a Dealer and the options to hit, pass, show hand
@@ -87,6 +94,12 @@ class Dealer:
         print("Dealer cards: ", end = " ")
         print("Hidden card &", end = " ")
         print(self.dealerHand[1:])
+
+    def score(self):
+        result = 0
+        for card in self.dealerHand:
+            result += card.int_value
+        return result
 
 class BlackJack:
     def __init__(self, num_players):
@@ -108,13 +121,15 @@ class BlackJack:
 
     # launches the game
     def startGame(self):
-        for i in range(2): #Deals 2 cards
+        for i in range(2): #Deals 2 cards for the first hand
             for each_player in self.playerList: #Deals to each player
                 each_player.hit(self.deck.dealCard())
-
             self.dealer.hit(self.deck.dealCard())
+
         print(self.playerList[0].showHand())
         print(self.dealer.showHand())
+        print(self.playerList[0].score())
+        print(self.dealer.score())
 
         # Dealer.showHand()
 # """
