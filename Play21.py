@@ -67,7 +67,7 @@ class Player:
 
     # displays the player's hand
     def showHand(self):
-        print("Player cards: ", end = " ")
+        print("{}'s hand: ".format(self.playerName), end = " ")
         print(self.playerHand)
 
     def score(self):
@@ -89,17 +89,31 @@ class Dealer:
     def hit(self, card):
         self.dealerHand.append(card)
 
-    # displays the dealer's hand hiding the first card in the list
-    def showHand(self):
-        print("Dealer cards: ", end = " ")
+
+    # displays the dealer's 'partial' hand hiding the first card in the list
+    def partialHand(self):
+        print("{}'s cards: ".format(dealerName), end = " ")
         print("Hidden card &", end = " ")
         print(self.dealerHand[1:])
+
+    # displays the dealer's hand
+    def showHand(self):
+        print("{}'s hand: ".format(self.dealerName), end = " ")
+        print("Hidden card &", end = " ")
+        print(self.dealerHand[:])
+
 
     def score(self):
         result = 0
         for card in self.dealerHand:
             result += card.int_value
-        return result
+        if result == 21:
+            print("Dealer has Blackjack. You lose.")
+            self.showHand()
+            return result
+        else:
+            self.partialHand()
+            return result - self.dealerHand[0].int_value
 
 class BlackJack:
     def __init__(self, num_players):
@@ -118,6 +132,13 @@ class BlackJack:
             self.playerList.append(newPlayer)
         #print(self.playerList)
 
+    def tableResults(self):
+        print(self.dealer.showHand())
+        print(self.dealer.score())
+
+        for eachPlayer in self.playerList:
+            eachPlayer.showHand()
+            print("Sum total is {}".format(eachPlayer.score()))
 
     # launches the game
     def startGame(self):
@@ -126,10 +147,13 @@ class BlackJack:
                 each_player.hit(self.deck.dealCard())
             self.dealer.hit(self.deck.dealCard())
 
-        print(self.playerList[0].showHand())
-        print(self.dealer.showHand())
-        print(self.playerList[0].score())
-        print(self.dealer.score())
+
+
+        #choice == "hit"
+        # while self.playerList.score != 21:# and choice=="hit":
+        #     for player in playerList:
+        #         choice = input("{} , would you like to hit or stay? ".format(player))
+
 
         # Dealer.showHand()
 # """
@@ -164,3 +188,6 @@ class BlackJack:
 
 
 newGame = BlackJack(2)
+
+
+newGame.tableResults()
