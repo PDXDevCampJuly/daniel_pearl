@@ -112,7 +112,7 @@ class Dealer:
         for card in self.dealerHand:
             result += card.int_value
         if result == 21:
-            print("Dealer has Blackjack.")
+            # print("Dealer has Blackjack.")
             return result
         elif result > 21:
              for i in self.dealerHand:
@@ -144,6 +144,8 @@ class BlackJack:
     def tableResults(self):
         #print(self.dealer.showHand())
         # print("Sum total is {}".format(self.dealer.score()))
+        print("-------------------------------------------------")
+        print("TABLE STATUS")
         print("-------------------------------------------------")
         for eachPlayer in self.playerList:
             eachPlayer.showHand()
@@ -179,39 +181,34 @@ class BlackJack:
 
     def tableSummary(self):
         print("-------------------------------------------------")
-        for each_player in self.playerList: # each player alone versus the dealer summary
-            # dealerOutput = ""
-            # if each_player.score() <= 21 and each_player.score() == self.dealer.score():
-            #     print("push")
-            #     dealerOutput = "push!"
-            # # elif self.dealer.score() == 21 and self.dealer.score() > each_player.score():
-            # #     dealerOutput = "wins!"
-            # elif each_player.score() <= 21 and each_player.score() > self.dealer.score() and self.dealer.score() > 21:
-            #     print("{} wins!".format(each_player.playerName))
-            #     dealerOutput = "lose!"
-            # elif each_player.score() >= 21 or each_player.score() < self.dealer.score():
-            #     print("{} loses!".format(each_player.playerName))
-            #     dealerOutput = "win!"
-            # print("{} {}\n".format(self.dealer.dealerName, dealerOutput))
-
+        print("GAME SUMMARY")
+        print("-------------------------------------------------")
+        for each_player in self.playerList: # each player alone versus
             if each_player.score() <= 21 and self.dealer.score() <= 21:
                 if each_player.score() == self.dealer.score():
-                    print("{} push!".format(each_player.playerName))
+                    each_playerOutput = "push!"
                     dealerOutput = "push!"
                 if each_player.score() > self.dealer.score():
-                    print("{} wins!".format(each_player.playerName))
-                    dealerOutput = "lose!"
+                    each_playerOutput = "wins!"
+                    dealerOutput = "loses!"
                 if each_player.score() < self.dealer.score():
-                    print("{} loses!".format(each_player.playerName))
-                    dealerOutput = "win!"
+                    each_playerOutput = "loses!"
+                    dealerOutput = "wins!"
             elif self.dealer.score() > 21 and each_player.score() <= 21:
-                print("{} wins!".format(each_player.playerName))
-                dealerOutput = "lose!"
+                each_playerOutput = "wins!"
+                dealerOutput = "loses!"
             else:
-                print("{} loses!".format(each_player.playerName))
+                each_playerOutput = "loses!"
                 dealerOutput = "wins!"
 
-            print("{} {}\n".format(self.dealer.dealerName, dealerOutput))
+            # player result
+            print("{}:".format(each_player.playerName))
+            print(">>> Sum total is {}. Player {}".format(each_player.score(), each_playerOutput))
+
+            # dealer result
+            print("{}:".format(self.dealer.dealerName))
+            print(">>> Sum total is {}. Dealer {}\n".format(self.dealer.score(), dealerOutput))
+
         print("-------------------------------------------------")
 
 
