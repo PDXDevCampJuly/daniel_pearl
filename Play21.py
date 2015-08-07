@@ -178,6 +178,7 @@ class BlackJack:
             print("{} has busted".format(self.dealer.dealerName))
 
     def tableSummary(self):
+        print("-------------------------------------------------")
         for each_player in self.playerList: # each player alone versus the dealer summary
             # dealerOutput = ""
             # if each_player.score() <= 21 and each_player.score() == self.dealer.score():
@@ -193,7 +194,7 @@ class BlackJack:
             #     dealerOutput = "win!"
             # print("{} {}\n".format(self.dealer.dealerName, dealerOutput))
 
-            if each_player.score() <= 21:
+            if each_player.score() <= 21 and self.dealer.score() <= 21:
                 if each_player.score() == self.dealer.score():
                     print("{} push!".format(each_player.playerName))
                     dealerOutput = "push!"
@@ -203,11 +204,15 @@ class BlackJack:
                 if each_player.score() < self.dealer.score():
                     print("{} loses!".format(each_player.playerName))
                     dealerOutput = "win!"
+            elif self.dealer.score() > 21 and each_player.score() <= 21:
+                print("{} wins!".format(each_player.playerName))
+                dealerOutput = "lose!"
             else:
                 print("{} loses!".format(each_player.playerName))
-                dealerOutput = "win!"
+                dealerOutput = "wins!"
 
             print("{} {}\n".format(self.dealer.dealerName, dealerOutput))
+        print("-------------------------------------------------")
 
 
 
