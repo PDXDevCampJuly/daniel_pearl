@@ -124,7 +124,6 @@ class Dealer:
                  result += card.int_value
         return result #- self.dealerHand[0].int_value
 
-
 class BlackJack:
     def __init__(self, num_players):
         self.deck = Deck() # making a Deck instance
@@ -179,7 +178,40 @@ class BlackJack:
             print("{} has busted".format(self.dealer.dealerName))
 
     def tableSummary(self):
-        pass
+        for each_player in self.playerList: # each player alone versus the dealer summary
+            # dealerOutput = ""
+            # if each_player.score() <= 21 and each_player.score() == self.dealer.score():
+            #     print("push")
+            #     dealerOutput = "push!"
+            # # elif self.dealer.score() == 21 and self.dealer.score() > each_player.score():
+            # #     dealerOutput = "wins!"
+            # elif each_player.score() <= 21 and each_player.score() > self.dealer.score() and self.dealer.score() > 21:
+            #     print("{} wins!".format(each_player.playerName))
+            #     dealerOutput = "lose!"
+            # elif each_player.score() >= 21 or each_player.score() < self.dealer.score():
+            #     print("{} loses!".format(each_player.playerName))
+            #     dealerOutput = "win!"
+            # print("{} {}\n".format(self.dealer.dealerName, dealerOutput))
+
+            if each_player.score() <= 21:
+                if each_player.score() == self.dealer.score():
+                    print("{} push!".format(each_player.playerName))
+                    dealerOutput = "push!"
+                if each_player.score() > self.dealer.score():
+                    print("{} wins!".format(each_player.playerName))
+                    dealerOutput = "lose!"
+                if each_player.score() < self.dealer.score():
+                    print("{} loses!".format(each_player.playerName))
+                    dealerOutput = "win!"
+            else:
+                print("{} loses!".format(each_player.playerName))
+                dealerOutput = "win!"
+
+            print("{} {}\n".format(self.dealer.dealerName, dealerOutput))
+
+
+
+
 
     # launches the game
     def startGame(self):
@@ -198,6 +230,8 @@ class BlackJack:
 
         # automate the dealer's turn
         self.dealerTurn()
+
+        self.tableSummary()
 
 
 
