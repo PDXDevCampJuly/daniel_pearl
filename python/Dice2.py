@@ -8,7 +8,9 @@ class Die:
         #randomly selects an index from the list
         self.currentValue = choice(self.possibleValues)
         return self.currentValue
-
+    def __repr__(self):
+        return self.currentValue
+        
 # Catch list of values for dice
 new_die = Die(["hearts", "clubs", "diamond"])
 print(new_die.roll())
