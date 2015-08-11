@@ -7,6 +7,9 @@ class Angry_roll:
         self.stage = 1
         self.prompt_user()
 
+    def describe_game(self):
+        print("Welcome to angry dice.")
+
     def prompt_user(self):
         #Tells user to press enter to continue
         input("Press Enter to begin ")
@@ -26,20 +29,20 @@ class Angry_roll:
 
         dice = self.roll_choice()
         if dice == "a":
-            self.cheat(a,b,dice)
-            a = self.dice_a.roll()
-            return a, b
+            if self.cheat(a,b,dice) == True:
+                b = 0
+            else:
+                a = self.dice_a.roll()
         elif dice == "b":
-            self.cheat(a,b,dice)
-            b = self.dice_b.roll()
-            return a, b
+            if self.cheat(a,b,dice) == True:
+                a = 0
+            else:
+                b = self.dice_b.roll()
         elif dice == "ab":
-            self.cheat(a,b,dice)
             a = self.dice_a.roll()
             b = self.dice_b.roll()
-            return a, b
-        else:
-            return a, b
+
+        return a, b
 
 
     def count_stage(self,a,b):
@@ -78,18 +81,17 @@ class Angry_roll:
     def cheat(self, a,b, choice):
         if self.stage == 3 and a == 6 and b != 5 and choice == "b":
             print ("Cheater!")
-            a = 0
-            return a
+            return True
         elif self.stage == 3 and b == 6 and a != 5 and choice == "a":
             print ("Cheater!")
-            b = 0
-            return b
+            return True
 
     #Initiates Game
     def start(self):
         a=0
         b=0
 
+        self.describe_game()
         while self.stage != 4:
             #Rolls dice
 
