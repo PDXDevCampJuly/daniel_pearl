@@ -10,7 +10,7 @@ class Die:
         return self.currentValue
     def __repr__(self):
         return self.currentValue
-        
+
 # Catch list of values for dice
-new_die = Die(["hearts", "clubs", "diamond"])
-print(new_die.roll())
+#new_die = Die(["hearts", "clubs", "diamond"])
+#print(new_die.roll())

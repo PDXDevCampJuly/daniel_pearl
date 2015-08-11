@@ -170,7 +170,7 @@ class BlackJack:
                 else:
                     print("\n")
                     break
-
+    
     def dealerTurn(self):
         while self.dealer.score() < 17:
             self.dealer.hit(self.deck.dealCard())
