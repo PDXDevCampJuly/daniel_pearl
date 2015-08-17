@@ -5,9 +5,10 @@ class Angry_roll:
         self.dice_a = Die([1,2,"angry",4,5,6]) #Creates dice a
         self.dice_b = Die([1,2,"angry",4,5,6]) #Creates dice b
         self.stage = 1
-        self.prompt_user()
+        self.prompt_user() #prompts user for die choice
 
     def describe_game(self):
+        #Describes game
         print("Welcome to angry dice.")
 
     def prompt_user(self):
@@ -15,91 +16,95 @@ class Angry_roll:
         input("Press Enter to begin ")
 
     def display(self,a,b):
-        #Displays the sides of the die
+        #Displays what is rolled
+        print("Stage {}".format(self.stage))
+        print("--------------")
         print("You rolled:")
         print("   a = [ {} ]".format(a))
         print("   b = [ {} ]".format(b))
+        print("--------------")
 
     def roll_choice(self):
-        #Prompts user to roll dice
-        dice=input("Please choose which dice you'd like to roll (a or b). Type 'ab' to roll both die: ")
+        #Prompts user to roll dice and returns choice
+        dice = input("Please choose which dice you'd like to roll (a, b). Type 'ab' or 'ba' to roll both die: ")
         return dice
 
-    def roll_dice(self,a,b):
+    def roll_condition(self,a,b, dice):
+    #returns roll conditions
 
-        dice = self.roll_choice()
-        if dice == "a":
-            if self.cheat(a,b,dice) == True:
-                b = 0
-            else:
-                a = self.dice_a.roll()
-        elif dice == "b":
-            if self.cheat(a,b,dice) == True:
-                a = 0
-            else:
-                b = self.dice_b.roll()
-        elif dice == "ab":
+        #if player chooses a, roll a
+        if "a" in dice:
             a = self.dice_a.roll()
+        #if player chooses b, roll b
+        if "b" in dice:
             b = self.dice_b.roll()
+        else:
+        #if player doesn't input a or b, tell user they are wrong
+            print("That is not a valid input")
+        return(a, b)
 
-        return a, b
+    def roll_dice(self,a,b):
+        dice = self.roll_choice() #Rolls dice and sets value to variable dice
+        if self.cheat(a,b,dice) == False:
+            a,b = self.roll_condition(a,b,dice)
 
+        return(a, b)
 
     def count_stage(self,a,b):
-        print("Stage {}".format(self.stage))
-        if (a=="angry" and b=="angry"):
+        #Returns the the die stage
+
+        #if both dice are angry, reset to the first stage
+        if (self.stage != 1 and a=="angry" and b=="angry"):
             print("Oh no! You've gone back to stage 1")
-            a,b = 0,0
             return 1
 
         else:
+            #if dice land on 1 and 2 on stage 1, got to stage 2
             if self.stage == 1:
                 if (a == 1 and b ==2) or (b == 1 and a == 2):
                     print("You are in stage 2")
                     return 2
-                else:
-                    return self.stage
+            #If dice land on 3 and 4 on stage 2, go to stage 3
             elif self.stage == 2:
                 if (a == "angry" and b == 4) or (b == "angry" and a == 4):
                     print("You are in stage 3")
                     return 3
-                else:
-                    return self.stage
+            #if dice land on 5 and 6 on stage 3, got to stage 4 for victory
             elif self.stage == 3:
-                if (a == 6 and b != 5):
-                    a = 0
-                    return self.stage
-                elif (b == 6 and a != 5):
-                    b = 0
-                    return self.stage
-                elif (a == 5 and b == 6) or (b == 5 and a == 6):
+                if (a == 5 and b == 6) or (b == 5 and a == 6):
                     return 4
-                    return self.stage
-                else:
-                    return self.stage
 
-    def cheat(self, a,b, choice):
-        if self.stage == 3 and a == 6 and b != 5 and choice == "b":
+            return self.stage
+
+    def cheat(self, a,b, dice):
+        #Determines whether user is cheating by holding a value of 6
+        if (self.stage == 3 and a == 6 and b != 5 and dice == "b") or self.stage == 3 and b == 6 and a != 5 and dice == "a": #Set conditions for cheating
             print ("Cheater!")
-            return True
-        elif self.stage == 3 and b == 6 and a != 5 and choice == "a":
-            print ("Cheater!")
-            return True
+            return True #return True if cheater
+        return False #return false if not cheater
 
     #Initiates Game
-    def start(self):
-        a=0
-        b=0
+    def main(self):
+    #starts game and calls other functions
 
+        #defines initial rolls for both die
+        a= "none"
+        b= "none"
+
+        #Describes game to player
         self.describe_game()
+
+        #Allows player to play while stage doesn't equal 4
         while self.stage != 4:
             #Rolls dice
-
             a, b = self.roll_dice(a, b)
+            #Displays the rolled dice
             self.display(a, b)
+            #Increments the stage until game is won
             self.stage = self.count_stage(a, b)
 
         print("You win! calm down")
 
+
 aroll = Angry_roll()
-aroll.start()
+aroll.main()
