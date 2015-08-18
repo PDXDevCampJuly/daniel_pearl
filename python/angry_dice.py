@@ -18,11 +18,11 @@ class Angry_roll:
     def display(self,a,b):
         #Displays what is rolled
         print("Stage {}".format(self.stage))
-        print("--------------")
+        print("----------------")
         print("You rolled:")
         print("   a = [ {} ]".format(a))
         print("   b = [ {} ]".format(b))
-        print("--------------")
+        print("----------------")
 
     def roll_choice(self):
         #Prompts user to roll dice and returns choice
@@ -44,6 +44,7 @@ class Angry_roll:
         return(a, b)
 
     def roll_dice(self,a,b):
+    #Gets user choice and rolls die based on it
         dice = self.roll_choice() #Rolls dice and sets value to variable dice
         if self.cheat(a,b,dice) == False:
             a,b = self.roll_condition(a,b,dice)
@@ -73,7 +74,7 @@ class Angry_roll:
             elif self.stage == 3:
                 if (a == 5 and b == 6) or (b == 5 and a == 6):
                     return 4
-
+            #Returns the stage the player is on
             return self.stage
 
     def cheat(self, a,b, dice):
@@ -88,8 +89,7 @@ class Angry_roll:
     #starts game and calls other functions
 
         #defines initial rolls for both die
-        a= "none"
-        b= "none"
+        a, b = "none", "none"
 
         #Describes game to player
         self.describe_game()
@@ -102,7 +102,7 @@ class Angry_roll:
             self.display(a, b)
             #Increments the stage until game is won
             self.stage = self.count_stage(a, b)
-
+        #Win statement
         print("You win! calm down")
 
 
