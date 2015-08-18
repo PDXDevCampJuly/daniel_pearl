@@ -9,7 +9,7 @@ class Angry_roll:
 
     def describe_game(self):
         #Describes game
-        print("Welcome to angry dice.")
+        print("Welcome to angry dice! You will roll 2 die (dice a & dice b). You may choose to roll both die or one of the two). The goal is to move through each stage until the conditions of the last stage is met. To complete stage 1, you must roll a 1 and a 2 on the die. You may choose to 'hold' a dice and roll the other to complete the task. To complete stage 2, you must roll a 4 and an 'angry'. Be careful. If both the die have 'angry' sides, you will go back to stage 1 no matter what stage you are currently on. To complete stage 3, you must roll a 5 and a 6. Unlike the other stages however, you cannot hold a six and must reroll. You will be called a cheater and your choice will be invalid if you try to do so. Once you roll a 5 and a 6 on the final stage (stage 3), you win and will be presented with a victory message. Good luck!
 
     def prompt_user(self):
         #Tells user to press enter to continue
