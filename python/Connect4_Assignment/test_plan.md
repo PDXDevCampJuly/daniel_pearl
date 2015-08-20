@@ -3,21 +3,37 @@ Controller Tests
 ================
 
 * update_board
- *
+ * Given a valid column and player, is board updated
+ * Given a valid column and invalid str player, is board not updated
+ * Given a valid column and invlaid int player, is board not updated
+ * Given a non existent column and a valid player, is board not updated
+ * given an incorrect param type column a valid player, is board not updated
 
-check_winner
+* check_winner
+ * Given board with win 3 different win conditions, does win return True
+ * Given board with no win conditions, does win return False
+ * Given a board that is not a list of lists, does it raise an error
 
-check_tie
+* check_tie
+ * Given lists are full, does tie return True
+ * Given lists are not full, does tie return False
+ * Given a board that is not a list of lists, does it raise an error
 
-get_player_name
+* get_player_name
+ * Given a user name, is name saved
+ * Given an invalid user name, does it prevent name from being saved
+ * Given no user input, does it prevent name from being saved
 
-update_turn
+* update_turn
+ * Given player name, is turn updated
 
-turn_validator
+* turn_validator
+ * Given a correct column, does it return True
+ * Given a column that doesn't exist, does it return False
+ * Given a column that is full, does it return False
+ * Given a column that has invalid param type, does it return False
 
-get_turn
-
-main
+* main
 
 
 Model Tests
