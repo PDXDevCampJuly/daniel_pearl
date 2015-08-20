@@ -28,17 +28,24 @@ class C4View:
              "3. The first player to 4-in-a-row wins!")
         print(print_statement, sep="", end="")
 
-    def win_statement(self):
+    def win_statement(self, name):
         """
+        :param name: winning players name
         :print: game winner
         """
-        pass
+        winning_statement = \
+            ("Congrats {} you've won!!!!").format(name)
+        print(winning_statement)
+
 
     def tie_statement(self):
         """
         :print: game tied
         """
-        pass
+        tie_statement = \
+            ("The board is full, no one wins X_x,"
+             "basically you're both losers.")
+        print(tie_statement)
 
     def print_board(self, board):
         """
