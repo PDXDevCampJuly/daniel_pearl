@@ -12,13 +12,21 @@ class C4View:
         :param name: player name
         :return: return column choice
         """
-        pass
+        choice = input("{}, where would you like to go? ".format(name))
+        return choice
 
     def show_instructions(self):
         """
          :print: instructions for game
         """
-        pass
+        print_statement = \
+            ("1. On your turn, drop one of your discs into any slot in the top of "
+             "the grid.\n"
+             "2. Take turns until one player get four\nof their color discs in a"
+             "row -\n"
+             "horizontally, vertically, or diagonally\n"
+             "3. The first player to 4-in-a-row wins!")
+        print(print_statement, sep="", end="")
 
     def win_statement(self):
         """
