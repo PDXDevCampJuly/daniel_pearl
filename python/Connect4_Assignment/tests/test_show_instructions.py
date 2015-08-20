@@ -6,8 +6,7 @@ from unittest.mock import patch
 from io import StringIO
 
 class ShowInstructions(unittest.TestCase):
-    """ Tests for printing instructions
-    """
+    """ Tests for printing instructions"""
     # TODO add error messages.
 
     def setUp(self):

@@ -6,6 +6,10 @@ from unittest.mock import patch
 from io import StringIO
 
 class PromptTurnTest(unittest.TestCase):
+    """Test turn prompt"""
+
+    # TODO add custom error messages.
+
     def setUp(self):
         self.test_view = C4View()
         print(self.shortDescription())

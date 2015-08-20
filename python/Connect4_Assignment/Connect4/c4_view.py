@@ -47,12 +47,27 @@ class C4View:
              "basically you're both losers.")
         print(tie_statement)
 
-    def print_board(self, board):
+    def print_board(self):
         """
         :print: board
         :param name: board list
         """
-        pass
+        """
+        string_row = "| "
+        rowlist = []
+        for row in range(6):
+            for col in range(7):
+                string_row.join(board[col][row])
+        print(alist)
+
+        for row in list:
+            print(" ".join(row))
+        """
+        board = []
+        for row in range(6):
+            for col in range(7):
+                board.append([row][col])
+        print(board)
 
     def prompt_name(self):
         """
@@ -60,3 +75,7 @@ class C4View:
         :return: str name entered by user
         """
         pass
+
+if __name__ == '__main__':
+    new = C4View()
+    new.print_board()
