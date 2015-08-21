@@ -76,6 +76,20 @@ class C4Model:
         :param row: row as integer, not index
         :return: [diagonal], [diagonal^1]
         """
+        diagonal = []
+        diagonal2 = []
+        const = (row-1) - (col-1)
+        for column_index, column in enumerate(self.board):
+            target_row_position = column_index + const
+            if target_row_position <= 5 and target_row_position >= 0:
+                diagonal.append(self.board[column_index][target_row_position])
+        # Go the opposite direction
+        const_2 = (row-1) + (col-1)
+        for column_index, column in enumerate(self.board):
+            target_row_position_2 = -1 * column_index + const_2
+            if target_row_position_2 <= 5 and target_row_position_2 >= 0:
+                diagonal2.append(self.board[column_index][target_row_position_2])
+        return (diagonal, diagonal2)
 
 
     def add_piece(self, col_num):
@@ -96,3 +110,14 @@ class C4Model:
             return (col_index + 1, row_index + 1)
         else:
             return (None,None)
+
+if __name__ == '__main__':
+    new = C4Model()
+    new.board = [['1', '-', '-', '-', '-', '-'],
+                ['-', 'O', '-', '-', '-', '-'],
+                ['-', '-', 'O', '-', 'O', '2'],
+                ['X', 'X', 'X', 'O', 'X', 'X'],
+                ['-', '-', 'O', 'X', 'O', '-'],
+                ['-', 'O', 'X', '-', '-', 'O'],
+                ['O', 'X', '-', '-', '-', '-']]
+    new.get_diagonal(5, 4)

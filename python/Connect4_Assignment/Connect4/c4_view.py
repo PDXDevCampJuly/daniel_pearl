@@ -71,4 +71,3 @@ class C4View:
 
 if __name__ == '__main__':
     new = C4View()
-
