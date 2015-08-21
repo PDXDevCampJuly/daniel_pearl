@@ -78,12 +78,13 @@ class C4Model:
         """
         diagonal = []
         diagonal2 = []
+        # We're utilzing y = mx + b to linearly traverse the data structure.
         const = (row-1) - (col-1)
         for column_index, column in enumerate(self.board):
             target_row_position = column_index + const
             if target_row_position <= 5 and target_row_position >= 0:
                 diagonal.append(self.board[column_index][target_row_position])
-        # Go the opposite direction
+        # Go the opposite direction i.e. inverse function.
         const_2 = (row-1) + (col-1)
         for column_index, column in enumerate(self.board):
             target_row_position_2 = -1 * column_index + const_2
