@@ -1,13 +1,13 @@
 __author__ = 'DanielPearl'
 
 
-
 class C4Model:
 
     """Connect 4 model"""
 
     def __init__(self):
         self.board = self.make_board()
+        self.players = []
 
     def make_board(self):
         """
@@ -17,22 +17,21 @@ class C4Model:
         board = []
         for row in range(7):
             board.append(["-"]*6)
-
         return board
 
-    def get_player(self, name):
+    def get_player(self, player_postion):
         """
-        :param name: Player name
+        :param player_postion: position of player
         :return: player str
         """
-        pass
+        return self.players[player_postion-1]
 
     def set_player(self, name):
         """
         :param name: Player name
         :return: player name
         """
-        pass
+        return self.players.append(name)
 
     def get_column(self, col_num):
         """
@@ -40,7 +39,9 @@ class C4Model:
         :param col_num: column number as int
         :return: list of pieces
         """
-        pass
+        if len(self.board) < col_num:
+            return []
+        return self.board[col_num-1]
 
     def get_row(self, row_num):
         """
