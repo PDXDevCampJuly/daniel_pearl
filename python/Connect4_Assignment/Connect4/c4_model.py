@@ -8,6 +8,7 @@ class C4Model:
     def __init__(self):
         self.board = self.make_board()
         self.players = []
+        self.current_turn = 1
 
     def make_board(self):
         """
@@ -33,6 +34,17 @@ class C4Model:
         """
         return self.players.append(name)
 
+    def update_turn(self):
+        """
+        :return: player's turn
+        """
+        if self.current_turn == 1:
+            self.current_turn = 2
+        else:
+            self.current_turn = 1
+
+        return self.current_turn
+
     def get_column(self, col_num):
         """
         Given column, return row
@@ -49,12 +61,38 @@ class C4Model:
         :param row_num: row number as int
         :return: dictionary
         """
-        pass
 
-    def add_piece(self, col_num, player):
+        row = []
+        for col_index, col in enumerate(self.board):
+            if len(self.board[col_index]) < row_num:
+                return None
+            row.append(self.board[col_index][row_num-1])
+        return row
+
+    def get_diagonal(self, col, row):
+        """
+        Gets two diagonal lists from a given position of a piece
+        :param col: column as integer, not  index
+        :param row: row as integer, not index
+        :return: [diagonal], [diagonal^1]
+        """
+
+
+    def add_piece(self, col_num):
         """
         :param col_num: column int
         :param player: player
-        :return: true if successful
+        :return: True, False & indexes of position (col, row)
         """
-        pass
+        if self.current_turn == 1:
+            piece = "\033[94m☻\033[0m"
+        else:
+            piece = "\033[92m☻\033[0m"
+        col_index = col_num - 1
+
+        if "-" in self.board[col_index]:
+            row_index = self.board[col_index].index("-")
+            self.board[col_index][row_index] = piece
+            return (col_index + 1, row_index + 1)
+        else:
+            return (None,None)
