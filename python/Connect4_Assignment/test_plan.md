@@ -10,12 +10,13 @@ Controller Tests
  * given an incorrect param type column a valid player, is board not updated
 
 * check_winner
- * Given board with win 3 different win conditions, does win return True
+ * Given board with 3 set x positions and a choice of x to complete 4, does win return True
  * Given board with no win conditions, does win return False
  * Given a board that is not a list of lists, does it raise an error
 
 * check_tie
  * Given lists are full, does tie return True
+
  * Given lists are not full, does tie return False
  * Given a board that is not a list of lists, does it raise an error
 
@@ -68,6 +69,7 @@ View Tests
 * prompt_turn
  * prompt is given a single input, returns single char string
  * prompt is given multiple inputs, returns multiple char strings
+ * No input given, repeats prompt
 * show_instructions
  * does it print instructions, horray
 * win_statement
@@ -81,3 +83,4 @@ View Tests
 * prompt_name
  * prompt is given a single input, returns single char string
  * prompt is given multiple inputs, returns multiple char strings
+ * No input given, repeats prompt

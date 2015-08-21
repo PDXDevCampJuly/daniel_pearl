@@ -1,6 +1,16 @@
+<style type="text/css">
+@media only screen
+    and(min-device width: 320px)
+    and(max-device width: 500px) {
+        div{
+        padding: 10px
+        }
+    }
+
 h1{
     color: white;
     font-family: 'Architects Dfont-family: 'Rock Salt', cursive;aughter', cursive;
+    margin:0;
 }
 
 h2{
@@ -18,7 +28,7 @@ section:last-child {
 
 nav a{
     display:inline-block;
-    padding: 20px;
+    padding: 17px;
     background-color: #292C2F;
     border-radius: 10px;
     border-bottom-left-radius: 0;
@@ -29,12 +39,17 @@ nav a{
     color: #4ECDC4;
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
-    width: 50px;
+    width: 60px;
     text-align: center;
     font-size: 1em;
+
 }
 
+a:hover {
+    background-color: #556270;
+}
 .body {
+    overflow: auto;
     color:#F9F2E7;
     background-color:#1D1f21;
     font-family: 'Open Sans', sans-serif;
@@ -62,6 +77,7 @@ nav a{
     display: inline-block;
     margin: 5px;
     height: 50px;
+
 }
 .toparticle {
     background-color:#292C2F;

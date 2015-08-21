@@ -38,7 +38,7 @@ class Angry_roll:
         #if player chooses b, roll b
         if "b" in dice:
             b = self.dice_b.roll()
-        else:
+        if "a" not in dice and "b" not in dice:
         #if player doesn't input a or b, tell user they are wrong
             print("That is not a valid input")
         return(a, b)

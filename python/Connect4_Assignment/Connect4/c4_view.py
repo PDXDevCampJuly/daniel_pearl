@@ -47,27 +47,21 @@ class C4View:
              "basically you're both losers.")
         print(tie_statement)
 
-    def print_board(self):
+    def print_board(self,board):
         """
         :print: board
         :param name: board list
         """
-        """
-        string_row = "| "
-        rowlist = []
-        for row in range(6):
-            for col in range(7):
-                string_row.join(board[col][row])
-        print(alist)
+        print('    1   2   3   4   5   6   7')
 
-        for row in list:
-            print(" ".join(row))
-        """
-        board = []
-        for row in range(6):
-            for col in range(7):
-                board.append([row][col])
-        print(board)
+        for y in range(6):
+
+            print(y+1, end = ' ')
+
+            for x in range(7):
+
+                print("| {}".format(board[x][y]), end=' ')
+            print('|')
 
     def prompt_name(self):
         """
@@ -78,4 +72,12 @@ class C4View:
 
 if __name__ == '__main__':
     new = C4View()
-    new.print_board()
+    board = [['x', '-', '-', '-', '-', '-'],
+                 ['-', '-', '-', '-', '-', '-'],
+                 ['-', '-', '-', '-', '-', '-'],
+                 ['-', '-', '-', '-', '-', '-'],
+                 ['-', '-', '-', '-', '-', '-'],
+                 ['-', '-', '-', '-', '-', '-'],
+                 ['-', '-', '-', '-', '-', '-']]
+    new.print_board(board)
+

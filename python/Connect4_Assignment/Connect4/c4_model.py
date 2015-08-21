@@ -7,7 +7,18 @@ class C4Model:
     """Connect 4 model"""
 
     def __init__(self):
-        pass
+        self.board = self.make_board()
+
+    def make_board(self):
+        """
+        Creates empty board
+        :return: 2D array
+        """
+        board = []
+        for row in range(7):
+            board.append(["-"]*6)
+
+        return board
 
     def get_player(self, name):
         """
