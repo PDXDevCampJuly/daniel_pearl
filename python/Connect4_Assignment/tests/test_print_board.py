@@ -58,5 +58,18 @@ class PrintBoardTest(unittest.TestCase):
         self.test_view.print_board(board)
         self.assertEqual(printed_board, mock_stdout.getvalue())
 
+    # def test_print_invalid_board(self):
+    #     """test does our handle invalid board sizes."""
+    #     board = [['-', '-', '-', '-', '-', 'x'],
+    #              ['-', '-', '-', '-', '-', '-'],
+    #              ['-', '-', '-', '-', '-', '-'],
+    #              ['-', '-', '-', '-', '-', '-'],
+    #              ['-', '-', '-', '-', '-', '-'],
+    #              ['-', '-', '-', '-', '-', '-']
+    #              ]
+    #
+    #     with self.assertRaises(ValueError):
+    #         self.test_view.print_board(board)
+
 if __name__ == '__main__':
     unittest.main()

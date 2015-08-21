@@ -52,32 +52,23 @@ class C4View:
         :print: board
         :param name: board list
         """
-        print('    1   2   3   4   5   6   7')
 
-        for y in range(6):
-
-            print(y+1, end = ' ')
-
-            for x in range(7):
-
-                print("| {}".format(board[x][y]), end=' ')
-            print('|')
-
+        final_board = "    1   2   3   4   5   6   7\n"
+        for row in range(6):
+            new_row = ""
+            new_row += str(row+1) + " "
+            for col in range(7):
+                new_row += "| {} ".format(board[col][row])
+            new_row += "|\n"
+            final_board += new_row
+        print(final_board[:-1])
     def prompt_name(self):
         """
         prompts user for name
         :return: str name entered by user
         """
-        pass
+        return input("Yo yo what's your name?")
 
 if __name__ == '__main__':
     new = C4View()
-    board = [['x', '-', '-', '-', '-', '-'],
-                 ['-', '-', '-', '-', '-', '-'],
-                 ['-', '-', '-', '-', '-', '-'],
-                 ['-', '-', '-', '-', '-', '-'],
-                 ['-', '-', '-', '-', '-', '-'],
-                 ['-', '-', '-', '-', '-', '-'],
-                 ['-', '-', '-', '-', '-', '-']]
-    new.print_board(board)
 
