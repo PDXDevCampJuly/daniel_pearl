@@ -43,11 +43,11 @@ Model Tests
 * get_player
  * test for player that exists, should get back the existing player
  * test for player that doesn't exist, shouldn't get that player
- * test giving a non string type param, should raise error
 * set_player
  * test adding player with a string
  * test adding a player that already exists
  * test adding a player with a non string name
+ * test giving a non string type param, should raise error
 * get_column
  * test asking for column that exists i.e. 1-7, we expect a list to be returned
  * test asking for a column that doesn't exits

@@ -1,11 +1,9 @@
 __author__ = 'DanielPearl'
 
+
 class C4View:
 
     """Connect 4 view"""
-
-    def __init__(self):
-        pass
 
     def prompt_turn(self, name):
         """
@@ -62,12 +60,13 @@ class C4View:
             new_row += "|\n"
             final_board += new_row
         print(final_board[:-1])
-    def prompt_name(self):
+
+    def prompt_name(self, player_num):
         """
         prompts user for name
         :return: str name entered by user
         """
-        return input("Yo yo what's your name?")
+        return input("Yo yo player {}, what's your name?".format(player_num))
 
 if __name__ == '__main__':
     new = C4View()

@@ -17,7 +17,7 @@ class PromptNameTest(unittest.TestCase):
     @patch ('builtins.input', return_value='Mr. Smith')
     def test_valid_single_input(self, return_value):
         """prompt is given a single input, returns single char string"""
-        self.assertEqual("Mr. Smith",self.test_view.prompt_name())
+        self.assertEqual("Mr. Smith",self.test_view.prompt_name(1))
 
 if __name__ == '__main__':
     unittest.main()
