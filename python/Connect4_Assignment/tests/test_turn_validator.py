@@ -7,7 +7,6 @@ from c4_controller import C4Controller
 class TurnValidatorTest(unittest.TestCase):
     def setUp(self):
         self.controller = C4Controller()
-
         print(self.shortDescription())
         self.controller.model.board = [['X', 'X', 'X', 'X', 'X', 'X'],
                                        ['-', '-', '-', '-', '-', '-'],

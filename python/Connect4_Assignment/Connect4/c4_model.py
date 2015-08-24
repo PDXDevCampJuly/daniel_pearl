@@ -5,6 +5,10 @@ class C4Model:
 
     """Connect 4 model"""
 
+    # Model constants.
+    PLAYER_1_PIECE = "\033[94m☻\033[0m"
+    PLAYER_2_PIECE = "\033[92m☻\033[0m"
+
     def __init__(self):
         self.board = self.make_board()
         self.players = []
@@ -101,9 +105,9 @@ class C4Model:
         :return: True, False & indexes of position (col, row)
         """
         if self.current_turn == 1:
-            piece = "\033[94m☻\033[0m"
+            piece = self.PLAYER_1_PIECE
         else:
-            piece = "\033[92m☻\033[0m"
+            piece = self.PLAYER_2_PIECE
         col_index = col_num - 1
 
         if "-" in self.board[col_index]:
