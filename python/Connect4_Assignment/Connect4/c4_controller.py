@@ -4,8 +4,9 @@ from c4_model import C4Model
 
 
 class C4Controller:
-
-    """Connect 4 controller"""
+    """
+    Connect 4 controller
+    """
 
     def __init__(self):
         self.model = C4Model()
@@ -106,4 +107,4 @@ class C4Controller:
 
 if __name__ == '__main__':
     new_game = C4Controller()
-    new_game.main()
+
