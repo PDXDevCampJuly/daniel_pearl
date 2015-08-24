@@ -51,10 +51,9 @@ class C4View:
         :param name: board list
         """
 
-        final_board = "    1   2   3   4   5   6   7\n"
-        for row in range(6):
+        final_board = "  1   2   3   4   5   6   7\n"
+        for row in range(5, -1, -1):
             new_row = ""
-            new_row += str(row+1) + " "
             for col in range(7):
                 new_row += "| {} ".format(board[col][row])
             new_row += "|\n"
@@ -66,7 +65,7 @@ class C4View:
         prompts user for name
         :return: str name entered by user
         """
-        return input("Yo yo player {}, what's your name?".format(player_num))
+        return input("\nYo yo player {}, what's your name?".format(player_num))
 
 if __name__ == '__main__':
     new = C4View()

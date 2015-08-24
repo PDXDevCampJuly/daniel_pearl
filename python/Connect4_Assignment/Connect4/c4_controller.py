@@ -42,10 +42,6 @@ class C4Controller:
         else:
             return False
 
-
-
-
-
     def check_tie(self):
         """
         :print: no more moves, players tie
@@ -80,7 +76,6 @@ class C4Controller:
         :param dirty_input: raw input from user
         :return: number of column
         """
-
         if len(col_num) == 1 and col_num.isnumeric():
             int_col = int(col_num)
             if "-" in self.model.get_column(int_col) and int_col < 8:
@@ -89,5 +84,26 @@ class C4Controller:
         return False
 
     def main(self):
-        pass
+        self.view.show_instructions()
+        self.get_player_names()
 
+        gameover = False
+        while not gameover:
+            self.view.print_board(self.model.board)
+            current_player = self.model.get_player(self.model.current_turn)
+            user_input = self.view.prompt_turn(current_player)
+            if self.turn_validator(user_input):
+                col, row = self.update_board(int(user_input))
+                if self.check_winner(col, row):
+                    self.view.print_board(self.model.board)
+                    self.view.win_statement(current_player)
+                    gameover = True
+                elif self.check_tie():
+                    self.view.print_board(self.model.board)
+                    self.view.tie_statement()
+                    gameover = True
+            self.model.update_turn()
+
+if __name__ == '__main__':
+    new_game = C4Controller()
+    new_game.main()
