@@ -37,28 +37,36 @@ class C4Controller:
         """
         gets player name and sets player
         """
-        player1, player2 = "Player1", "Player2"
-        while player1 != "" and player2 != "":
-            if player1 == "Player1" or player1 == "":
+        player1 = ""
+        player2 = ""
+        player_names_valid = False
+        while not player_names_valid:
+            if player1 == "":
                 player1 = self.view.prompt_name(1)
-            if player2 == "Player2" or player2 == "":
+
+            if player2 == "":
                 player2 = self.view.prompt_name(2)
+
+            if len(player1) > 0 and len(player2) > 0:
+                player_names_valid = True
 
         self.model.set_player(player1)
         self.model.set_player(player2)
 
-    def turn_validator(self, dirty_input):
+    def turn_validator(self, col_num):
         """
         :param dirty_input: raw input from user
         :return: number of column
         """
-        pass
 
-    def get_turn(self):
-        """
-        loops turns between players
-        """
-        pass
+        if len(col_num) == 1 and col_num.isnumeric():
+
+            int_col = int(col_num)
+
+            if "-" in self.model.get_column(int_col) and int_col < 8:
+                return True
+
+        return False
 
     def main(self):
         pass

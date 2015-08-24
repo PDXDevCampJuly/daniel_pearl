@@ -32,7 +32,8 @@ class C4Model:
         :param name: Player name
         :return: player name
         """
-        return self.players.append(name)
+        self.players.append(name)
+        return self.players
 
     def update_turn(self):
         """
