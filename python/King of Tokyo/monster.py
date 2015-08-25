@@ -6,45 +6,53 @@ class Monster:
         self.victory_points = 0
 
     def reset(self):
+        """resets health and victory points"""
         self.health = 10
         self.victory_points = 0
 
     def in_tokyo(self):
-    #checks status
+        """checks status"""
         if self.status == "In Tokyo":
             return True
+        return False
 
     def flee(self):
-    #monster flees
-        #prompt monster to flee
-        flee = input("Do you want to flee Tokyo? (y / n)")
-        #flee
-        if "y" in flee:
-            return True
-        #don't flee
-        if "n" in flee:
-            return False
-        #Invalid statement
-        if "y" not in flee and n not in flee:
-            print ("Invalid statement.")
+        """monster flees"""
+        flee = None
+        while "y" not in flee or "n" not in flee:
+            flee = input("Do you want to flee Tokyo? (y / n) ")
+            if "y" in flee: #Monster flees
+                return True
+            elif "n" in flee: #Monster stays
+                return False
+            elif "y" in flee and "n" in flee: #Monster confused
+                print("Yes or no? You must choose one. ")
+                continue
+
 
     def heal(self,heal_amount):
-    #Heals monster
-        #heals monster if heal amount doesn't excede 10
+        """monster flees"""
         if heal_amount <= (10-self.health):
             self.health += heal_amount
-        #Error message is heal amount excedes 10
         else:
-            print ("Invalid heal amount")
-            return self.health
+            return 10
 
     def attack(self, dmg_amount):
-    #damages monster
-        #returns health amount from dmg
+        """monster takes damage"""
+        self.health -= dmg_amount
         if self.health > 0:
-            return self.health +- dmg_amount
-        #returns KO if dmg greater than health
+            return self.health
         else:
-            print("K.O.'d")
-            return self.health +- dmg_amount
+            self.status = "K.O.'d"
+            print(self.status)
+            return self.health
 
+    def score(self, points):
+        """Monster is victorious"""
+        self.victory_points +- points
+        if self.victory_points >= 20:
+            self.status = "WINNING"
+            print(self.status)
+            return self.victory_points
+        else:
+            return self.victory_points

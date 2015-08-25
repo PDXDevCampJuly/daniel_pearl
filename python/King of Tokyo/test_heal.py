@@ -9,27 +9,28 @@ from io import StringIO
 class test_heal(unittest.TestCase):
     def setUp(self):
         self.monsta = Monster()
-        self.monsta.health = 5
+         print(self.shortDescription())
 
     #Tests if monster heals
     def test_valid_heal(self):
-        health = self.monsta.heal(5)
-
-        self.assertEqual(health, 10, "Heal did not work")
+        """
+        :return: health of monster int
+        """
+        self.monsta.health = 4
+        expected = 9
+        actual = self.monsta.heal(5)
+        assertEqual(expected, actual)
 
     #Monster should not heal if sum > 10
     def test_invalid_heal(self):
-        health = self.monsta.heal(6)
+        """
+        :return: health of monster int
+        """
+        self.monsta.health = 7
+        expected = 10
+        actual = self.monsta.heal(5)
+        assertEqual(expected, actual)
 
-        self.assertNotEqual(health, 11, "Heal should not have worked")
-
-    #Tests invalid output
-    @patch ('sys.stdout', new_callable=StringIO)
-    def test_attack_die_KO(self, mock_stdout):
-        health = self.monsta.attack(6)
-
-        text = "Invalid heal amount"
-        self.assertNotEqual(mock_stdout.getValue(), text)
 
 if __name__ == '__main__':
     unittest.main()

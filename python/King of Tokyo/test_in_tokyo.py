@@ -5,22 +5,29 @@ from monster import Monster
 
 #Tests status
 class test_in_tokyo(unittest.TestCase):
-    #Defines status
     def setUp(self):
         self.monsta = Monster()
+        print(self.shortDescription())
+
+    def test_in_toyko_valid(self):
+        """
+        Tests if monster shows up in Tokyo
+        :return: Boolean
+        """
         self.monsta.status = "In Tokyo"
 
-    #Tests if monster shows up in Tokyo
-    def test_in_toyko_true(self):
-        tokyo = self.monsta.in_tokyo()
+        actual = self.monsta.intokyo()
+        self.assertTrue(actual)
 
-        self.assertTrue(tokyo, "Monster not showing up in Tokyo")
-
-    #Tests if monster does not show up in Tokyo
     def test_in_tokyo_false(self):
+        """
+        Tests if monster does not shows up in Tokyo
+        :return: Boolean
+        """
         self.monsta.status = "Out of Tokyo"
-        tokyo = self.monsta.in_tokyo()
-        self.assertFalse(tokyo,"Monster is showing up in Tokyo")
+
+        actual = self.monsta.intokyo()
+        self.assertFalse(actual)
 
 if __name__ == '__main__':
     unittest.main()

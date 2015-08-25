@@ -9,12 +9,11 @@ from io import StringIO
 class test_attack(unittest.TestCase):
     def setUp(self):
         self.monsta = Monster()
-        self.monsta.health = 5
 
     #Tests if heal function works
     def test_attack_live(self):
         health = self.monsta.attack(5)
-
+        expected =
         self.assertEqual(health, 0, "Attack did not work")
 
     #Heal function should not work if total > 10

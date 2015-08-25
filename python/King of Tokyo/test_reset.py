@@ -3,21 +3,34 @@ __author__ = 'DanielPearl'
 import unittest
 from monster import Monster
 
-#Tests reset
-class test_reset(unittest.TestCase):
+
+class MonsterResetTest(unittest.TestCase):
+
     def setUp(self):
         self.monsta = Monster()
+        print(self.shortDescription())
 
-    #Tests if stats reset
-    def test_reset(self):
+    def test_valid_health_reset(self):
+        """
+        Tests for valid health reset
+        """
         self.monsta.health = 5
+        self.monsta.reset()
+        expected = 10
+        actual = self.monsta.health
+
+        assertEqual(expected, actual)
+
+    def test_valid_victory_reset(self):
+        """
+        Tests for valid victory point reset
+        """
         self.monsta.victory_points = 5
         self.monsta.reset()
-        if self.monsta.health == 10 and self.monsta.victory_points == 0:
-            self.reset = True
+        expected = 0
+        actual = self.monsta.victory_points
 
-        self.assertTrue(self.reset, "Monster does not reset")
-
+        assertEqual(expected, actual)
 
 if __name__ == '__main__':
     unittest.main()
