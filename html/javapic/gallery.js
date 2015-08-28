@@ -1,6 +1,6 @@
 var gallery = document.getElementById("gallery");
 //Sets gallery to the gallery id in html
-
+var image_show = document.getElementById("image_show");
 var images = new Array();
 
 function create_gallery(){
@@ -21,5 +21,24 @@ function create_gallery(){
         gallery.appendChild(new_list); //append lists to gallery
     }
 }
+
+function on_off(){
+    //Switch between display image and display none
+
+    /*image_show.src =*/
+    if (image_show.className === "display_none"){
+        image_show.className = "display_img";
+    } else if (image_show.className === "display_img"){
+        image_show.className = "display_none";
+    }
+}
+
+function show_image(){
+    
+}
+
+gallery.addEventListener("click", on_off, false);
+image_show.addEventListener("click", on_off, false);
+
 
 create_gallery()

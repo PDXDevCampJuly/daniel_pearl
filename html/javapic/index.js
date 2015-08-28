@@ -18,6 +18,4 @@ function update_jumbotron(){
         }
 }
 
-
-
 setInterval(update_jumbotron, 5000);
