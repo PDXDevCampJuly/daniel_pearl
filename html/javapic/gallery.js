@@ -1,10 +1,12 @@
+/*-------------------------Create variables-------------------------*/
+
 var gallery = document.getElementById("gallery");
-//Sets gallery to the gallery id in html
 var image_show = document.getElementById("image_show");
-var images = new Array();
+
+/*---------------------Populate site with images---------------------*/
 
 function create_gallery(){
-    //Creates a photo gallery that allows for resizing
+    //Displays images on page that use gallery settings
 
     for (var i = 1; i < 60; i++){
 
@@ -19,26 +21,33 @@ function create_gallery(){
 
         new_list.appendChild(new_image); //append images to list
         gallery.appendChild(new_list); //append lists to gallery
+
+        eventListeners();
     }
 }
+/*-----------------------Make Images Clickable-----------------------*/
 
-function on_off(){
-    //Switch between display image and display none
+function image_click(e){
+    //Add target event
+    image_change(e.target);
+}
 
-    /*image_show.src =*/
-    if (image_show.className === "display_none"){
-        image_show.className = "display_img";
-    } else if (image_show.className === "display_img"){
+function image_change(select_image){
+    //Change image display
+    if (image_show.className === "display_img") { //removes image
         image_show.className = "display_none";
+    } else if (image_show.className = "display_none"){ //reveals image
+        image_show.firstElementChild.src= select_image.src;
+        image_show.className = "display_img";
     }
 }
 
-function show_image(){
-    
+/*------------------------Add Event Listeners------------------------*/
+
+function eventListeners(){
+    //Add click events to image
+    gallery.addEventListener("click", image_click, false);
+    image_show.addEventListener("click", image_change, false);
 }
 
-gallery.addEventListener("click", on_off, false);
-image_show.addEventListener("click", on_off, false);
-
-
-create_gallery()
+create_gallery();
