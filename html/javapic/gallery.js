@@ -2,6 +2,8 @@
 
 var gallery = document.getElementById("gallery");
 var image_show = document.getElementById("image_show");
+var tagline = document.querySelector(".tagline");
+var name_input = sessionStorage.getItem("name_input");
 
 /*---------------------Populate site with images---------------------*/
 
@@ -10,26 +12,33 @@ function create_gallery(){
 
     for (var i = 1; i < 60; i++){
 
+        if (i === 36 || i === 42){
+            i++;
+        }
         var new_list = document.createElement('li'); //creates new list
         var new_image = document.createElement('img'); //creates new image
 
         if (i < 10){
             new_image.src = "images/pdxcg_0" + i + ".jpg";
+
         } else {
             new_image.src = "images/pdxcg_" + i + ".jpg";
         }
 
         new_list.appendChild(new_image); //append images to list
         gallery.appendChild(new_list); //append lists to gallery
-
-        eventListeners();
     }
+
+    eventListeners();
 }
 /*-----------------------Make Images Clickable-----------------------*/
 
 function image_click(e){
     //Add target event
-    image_change(e.target);
+    /*if (e.target.type === "img"){
+        console.log("target image")*/
+        image_change(e.target);
+    /*}*/
 }
 
 function image_change(select_image){
@@ -49,5 +58,9 @@ function eventListeners(){
     gallery.addEventListener("click", image_click, false);
     image_show.addEventListener("click", image_change, false);
 }
+
+/*----------------------Change Name in Tagline----------------------*/
+
+tagline.innerHTML = "develop something beautiful, " + name_input;
 
 create_gallery();
