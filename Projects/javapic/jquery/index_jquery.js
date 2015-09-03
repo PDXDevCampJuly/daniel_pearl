@@ -1,6 +1,5 @@
 /*-------------------------Create variables-------------------------*/
 
-var jumbotron = document.getElementById("jumbotron");
 var count = 1;
 
 /*-------------------------Create slideshow-------------------------*/

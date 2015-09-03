@@ -12,13 +12,11 @@ function create_gallery(){
     //Displays images on page that use gallery settings
 
     for (var i = 1; i < 60; i++){
-
         var new_list = document.createElement('li'); //creates new list
         var new_image = document.createElement('img'); //creates new image
 
         if (i < 10){
             new_image.src = "images/pdxcg_0" + i + ".jpg";
-
         } else {
             new_image.src = "images/pdxcg_" + i + ".jpg";
         }
@@ -28,9 +26,7 @@ function create_gallery(){
     }
 }
 
-for (var i = 1; i < 60; i++){
-    $( "li" ).append( "<strong>Hello</strong>" );
-}
+create_gallery();
 
 /*----------------------Change Name in Tagline----------------------*/
 
@@ -39,8 +35,6 @@ if (name_input === ""){
 } else{
     tagline.innerHTML = "develop something beautiful";
 }
-
-create_gallery();
 
 /*----------------------Enlarge & hide images----------------------*/
 
