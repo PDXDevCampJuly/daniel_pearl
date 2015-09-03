@@ -1,7 +1,8 @@
-
 /*--------------------------Validate Input--------------------------*/
 
 function validation(){
+    //validates form and returns true or false
+
         if ($("input[name=name]").val() === ""){
             alert("You must enter a name.");
             return false;
@@ -15,27 +16,20 @@ function validation(){
             return false;
         }
         return true;
+
+        
+
 }
 /*----------------------Submit and Change name----------------------*/
 
-function submit_form(){
+$("#signup").submit(function(e){
     //submits the form and returns to the gallery page
 
-    $("#signup").submit(function(e){
-        e.preventDefault();
+    e.preventDefault(); //prevents form from submitting without input
 
-        if (validation()){
-            console.log(validation());
-            change_name();
-            window.location.href = "gallery_jquery.html";
-        }
-    });
-}
-
-function change_name(){
-    //Creates sessions storage
-
-    sessionStorage.setItem("name_input", $["inpupt[name=name].val()"]);
-}
- 
-submit_form();
+    if (validation()){
+        console.log(name);
+        sessionStorage.setItem("name_input", $("input[name=name]".value)); //saves name value into a key
+        window.location.href = "gallery_jquery.html"; //switches to gallery.html
+    }
+});
