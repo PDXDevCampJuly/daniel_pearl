@@ -40,12 +40,10 @@ class Monster:
     def attack(self, dmg_amount):
         """monster takes damage"""
         self.health -= dmg_amount
-        if self.health > 0:
-            return self.health
-        else:
+        if self.health <= 0:
             self.status = "K.O.'d"
             print(self.status)
-            return self.health
+        return self.health
 
     def score(self, points):
         """Monster is victorious"""

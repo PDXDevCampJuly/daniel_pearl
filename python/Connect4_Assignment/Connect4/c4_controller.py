@@ -107,4 +107,4 @@ class C4Controller:
 
 if __name__ == '__main__':
     new_game = C4Controller()
-
+    new_game.main()

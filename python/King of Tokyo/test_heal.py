@@ -11,7 +11,6 @@ class test_heal(unittest.TestCase):
         self.monsta = Monster()
          print(self.shortDescription())
 
-    #Tests if monster heals
     def test_valid_heal(self):
         """
         :return: health of monster int
@@ -21,7 +20,6 @@ class test_heal(unittest.TestCase):
         actual = self.monsta.heal(5)
         assertEqual(expected, actual)
 
-    #Monster should not heal if sum > 10
     def test_invalid_heal(self):
         """
         :return: health of monster int
