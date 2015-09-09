@@ -1,0 +1,487 @@
+gdata.io.handleScriptLoaded({
+    "version": "1.0",
+    "encoding": "UTF-8",
+    "feed": {
+        "xmlns": "http://www.w3.org/2005/Atom",
+        "xmlns$openSearch": "http://a9.com/-/spec/opensearchrss/1.0/",
+        "xmlns$gsx": "http://schemas.google.com/spreadsheets/2006/extended",
+        "id": {
+            "$t": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values"
+        },
+        "updated": {
+            "$t": "2015-09-08T21:36:23.547Z"
+        },
+        "category": [{
+            "scheme": "http://schemas.google.com/spreadsheets/2006",
+            "term": "http://schemas.google.com/spreadsheets/2006#list"
+        }],
+        "title": {
+            "type": "text",
+            "$t": "Form Responses 1"
+        },
+        "link": [{
+            "rel": "alternate",
+            "type": "application/atom+xml",
+            "href": "https://docs.google.com/spreadsheets/d/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/pubhtml"
+        }, {
+            "rel": "http://schemas.google.com/g/2005#feed",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values"
+        }, {
+            "rel": "http://schemas.google.com/g/2005#post",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values"
+        }, {
+            "rel": "self",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values?alt\u003djson-in-script"
+        }],
+        "author": [{
+            "name": {
+                "$t": "tar3820"
+            },
+            "email": {
+                "$t": "tar3820@gmail.com"
+            }
+        }],
+        "openSearch$totalResults": {
+            "$t": "12"
+        },
+        "openSearch$startIndex": {
+            "$t": "1"
+        },
+        "entry": [{
+            "id": {
+                "$t": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/cokwr"
+            },
+            "updated": {
+                "$t": "2015-09-08T21:36:23.547Z"
+            },
+            "category": [{
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "title": {
+                "type": "text",
+                "$t": "9/7/2015 15:28:50"
+            },
+            "content": {
+                "type": "text",
+                "$t": "posttitle: Another Test, postbody: Hmm\n "
+            },
+            "link": [{
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/cokwr"
+            }],
+            "gsx$timestamp": {
+                "$t": "9/7/2015 15:28:50"
+            },
+            "gsx$posttitle": {
+                "$t": "Another Test"
+            },
+            "gsx$postbody": {
+                "$t": "Hmm\n "
+            },
+            "gsx$datepostmade": {
+                "$t": ""
+            }
+        }, {
+            "id": {
+                "$t": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/cpzh4"
+            },
+            "updated": {
+                "$t": "2015-09-08T21:36:23.547Z"
+            },
+            "category": [{
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "title": {
+                "type": "text",
+                "$t": "9/7/2015 16:19:40"
+            },
+            "content": {
+                "type": "text",
+                "$t": "posttitle: This is a post, postbody: See? This is a post. "
+            },
+            "link": [{
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/cpzh4"
+            }],
+            "gsx$timestamp": {
+                "$t": "9/7/2015 16:19:40"
+            },
+            "gsx$posttitle": {
+                "$t": "This is a post"
+            },
+            "gsx$postbody": {
+                "$t": "See? This is a post. "
+            },
+            "gsx$datepostmade": {
+                "$t": ""
+            }
+        }, {
+            "id": {
+                "$t": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/cre1l"
+            },
+            "updated": {
+                "$t": "2015-09-08T21:36:23.547Z"
+            },
+            "category": [{
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "title": {
+                "type": "text",
+                "$t": "9/7/2015 16:19:57"
+            },
+            "content": {
+                "type": "text",
+                "$t": "posttitle: Here's another one, postbody: Super amazing, this forum. "
+            },
+            "link": [{
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/cre1l"
+            }],
+            "gsx$timestamp": {
+                "$t": "9/7/2015 16:19:57"
+            },
+            "gsx$posttitle": {
+                "$t": "Here's another one"
+            },
+            "gsx$postbody": {
+                "$t": "Super amazing, this forum. "
+            },
+            "gsx$datepostmade": {
+                "$t": ""
+            }
+        }, {
+            "id": {
+                "$t": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/chk2m"
+            },
+            "updated": {
+                "$t": "2015-09-08T21:36:23.547Z"
+            },
+            "category": [{
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "title": {
+                "type": "text",
+                "$t": "9/8/2015 14:17:32"
+            },
+            "content": {
+                "type": "text",
+                "$t": "posttitle: Hello World, postbody: This is a forum that I made to give you all more practice with AJAX. You will have to make a client for this forum yourselves. "
+            },
+            "link": [{
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/chk2m"
+            }],
+            "gsx$timestamp": {
+                "$t": "9/8/2015 14:17:32"
+            },
+            "gsx$posttitle": {
+                "$t": "Hello World"
+            },
+            "gsx$postbody": {
+                "$t": "This is a forum that I made to give you all more practice with AJAX. You will have to make a client for this forum yourselves. "
+            },
+            "gsx$datepostmade": {
+                "$t": ""
+            }
+        }, {
+            "id": {
+                "$t": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/ciyn3"
+            },
+            "updated": {
+                "$t": "2015-09-08T21:36:23.547Z"
+            },
+            "category": [{
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "title": {
+                "type": "text",
+                "$t": "9/8/2015 14:30:09"
+            },
+            "content": {
+                "type": "text",
+                "$t": "posttitle: Testing the spreadsheet, postbody: I want to see if the page auto reloads "
+            },
+            "link": [{
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/ciyn3"
+            }],
+            "gsx$timestamp": {
+                "$t": "9/8/2015 14:30:09"
+            },
+            "gsx$posttitle": {
+                "$t": "Testing the spreadsheet"
+            },
+            "gsx$postbody": {
+                "$t": "I want to see if the page auto reloads "
+            },
+            "gsx$datepostmade": {
+                "$t": ""
+            }
+        }, {
+            "id": {
+                "$t": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/ckd7g"
+            },
+            "updated": {
+                "$t": "2015-09-08T21:36:23.547Z"
+            },
+            "category": [{
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "title": {
+                "type": "text",
+                "$t": "9/8/2015 15:28:40"
+            },
+            "content": {
+                "type": "text",
+                "$t": "posttitle: test, postbody: test, datepostmade: test"
+            },
+            "link": [{
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/ckd7g"
+            }],
+            "gsx$timestamp": {
+                "$t": "9/8/2015 15:28:40"
+            },
+            "gsx$posttitle": {
+                "$t": "test"
+            },
+            "gsx$postbody": {
+                "$t": "test"
+            },
+            "gsx$datepostmade": {
+                "$t": "test"
+            }
+        }, {
+            "id": {
+                "$t": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/clrrx"
+            },
+            "updated": {
+                "$t": "2015-09-08T21:36:23.547Z"
+            },
+            "category": [{
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "title": {
+                "type": "text",
+                "$t": "9/8/2015 15:30:27"
+            },
+            "content": {
+                "type": "text",
+                "$t": "posttitle:  What... is the air-speed velocity of an unladen swallow?, postbody: it's 42 mph"
+            },
+            "link": [{
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/clrrx"
+            }],
+            "gsx$timestamp": {
+                "$t": "9/8/2015 15:30:27"
+            },
+            "gsx$posttitle": {
+                "$t": " What... is the air-speed velocity of an unladen swallow?"
+            },
+            "gsx$postbody": {
+                "$t": "it's 42 mph"
+            },
+            "gsx$datepostmade": {
+                "$t": ""
+            }
+        }, {
+            "id": {
+                "$t": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/cyevm"
+            },
+            "updated": {
+                "$t": "2015-09-08T21:36:23.547Z"
+            },
+            "category": [{
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "title": {
+                "type": "text",
+                "$t": "9/8/2015 15:31:19"
+            },
+            "content": {
+                "type": "text",
+                "$t": "posttitle:  What... is the air-speed velocity of an unladen swallow?, postbody: it's 42 mph"
+            },
+            "link": [{
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/cyevm"
+            }],
+            "gsx$timestamp": {
+                "$t": "9/8/2015 15:31:19"
+            },
+            "gsx$posttitle": {
+                "$t": " What... is the air-speed velocity of an unladen swallow?"
+            },
+            "gsx$postbody": {
+                "$t": "it's 42 mph"
+            },
+            "gsx$datepostmade": {
+                "$t": ""
+            }
+        }, {
+            "id": {
+                "$t": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/cztg3"
+            },
+            "updated": {
+                "$t": "2015-09-08T21:36:23.547Z"
+            },
+            "category": [{
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "title": {
+                "type": "text",
+                "$t": "9/8/2015 15:33:21"
+            },
+            "content": {
+                "type": "text",
+                "$t": ""
+            },
+            "link": [{
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/cztg3"
+            }],
+            "gsx$timestamp": {
+                "$t": "9/8/2015 15:33:21"
+            },
+            "gsx$posttitle": {
+                "$t": ""
+            },
+            "gsx$postbody": {
+                "$t": ""
+            },
+            "gsx$datepostmade": {
+                "$t": ""
+            }
+        }, {
+            "id": {
+                "$t": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/d180g"
+            },
+            "updated": {
+                "$t": "2015-09-08T21:36:23.547Z"
+            },
+            "category": [{
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "title": {
+                "type": "text",
+                "$t": "9/8/2015 15:34:22"
+            },
+            "content": {
+                "type": "text",
+                "$t": "posttitle: how much wood could a wood chuck, postbody: chuck if could chuck wood."
+            },
+            "link": [{
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/d180g"
+            }],
+            "gsx$timestamp": {
+                "$t": "9/8/2015 15:34:22"
+            },
+            "gsx$posttitle": {
+                "$t": "how much wood could a wood chuck"
+            },
+            "gsx$postbody": {
+                "$t": "chuck if could chuck wood."
+            },
+            "gsx$datepostmade": {
+                "$t": ""
+            }
+        }, {
+            "id": {
+                "$t": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/d2mkx"
+            },
+            "updated": {
+                "$t": "2015-09-08T21:36:23.547Z"
+            },
+            "category": [{
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "title": {
+                "type": "text",
+                "$t": "9/8/2015 15:36:10"
+            },
+            "content": {
+                "type": "text",
+                "$t": "posttitle:  What... is the air-speed velocity of an unladen swallow?, postbody: i"
+            },
+            "link": [{
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/d2mkx"
+            }],
+            "gsx$timestamp": {
+                "$t": "9/8/2015 15:36:10"
+            },
+            "gsx$posttitle": {
+                "$t": " What... is the air-speed velocity of an unladen swallow?"
+            },
+            "gsx$postbody": {
+                "$t": "i"
+            },
+            "gsx$datepostmade": {
+                "$t": ""
+            }
+        }, {
+            "id": {
+                "$t": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/cssly"
+            },
+            "updated": {
+                "$t": "2015-09-08T21:36:23.547Z"
+            },
+            "category": [{
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }],
+            "title": {
+                "type": "text",
+                "$t": "9/8/2015 15:36:23"
+            },
+            "content": {
+                "type": "text",
+                "$t": "posttitle: Howdy, postbody: This is a test post body."
+            },
+            "link": [{
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values/cssly"
+            }],
+            "gsx$timestamp": {
+                "$t": "9/8/2015 15:36:23"
+            },
+            "gsx$posttitle": {
+                "$t": "Howdy"
+            },
+            "gsx$postbody": {
+                "$t": "This is a test post body."
+            },
+            "gsx$datepostmade": {
+                "$t": ""
+            }
+        }]
+    }
+});

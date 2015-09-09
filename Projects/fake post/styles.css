@@ -1,0 +1,29 @@
+
+.insert{
+    width: 500px;
+    background-color: #fff;
+    margin: 5 auto;
+    padding: 75px 50px;
+    border-radius: 2px;
+}
+
+tr {
+    margin: .5px;
+}
+td {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid;
+}
+
+.input{
+    margin: 10px;
+}
+
+.submit_section{
+    margin: 10px;
+}
+label, input {
+    display: block;
+    width: 200px;
+}
