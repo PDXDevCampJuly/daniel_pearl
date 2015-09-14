@@ -1,0 +1,57 @@
+h1 {
+    color: white;
+}
+body{
+    background-color: #444444;
+}
+
+article, section{
+    border-radius: 10px;
+}
+
+table{
+    border-collapse:collapse;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid;
+}
+
+tr td:nth-child(1){
+    background-color: lightgrey;
+    width:10%;
+}
+
+tr td:nth-child(2){
+    background-color: lightgreen;
+    width:20%;
+}
+
+tr td:nth-child(3){
+    background-color: lightblue;
+    width:70%;
+}
+
+label, input,.textComment {
+    display: block;
+    width: 200px;
+}
+
+.date, .title, .comment{
+    font-weight: bold;
+    background-color: white;
+}
+
+.input, .submit_section{
+    margin: 10px;
+    color: white;
+}
+
+.insert{
+    background-color: #fff;
+    margin: 5px;
+    padding: 20px 20px;
+    border-radius: 5px;
+    border: 1px solid;
+}

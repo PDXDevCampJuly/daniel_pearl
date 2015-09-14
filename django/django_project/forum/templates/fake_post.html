@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+
+<html>
+<link href="{% static "styles.css" %}" rel="stylesheet"/>
+<html>
+
+<head>
+    <title> Fake Forum </title>
+    <link rel="stylesheet" href= "{% static "styles.css" %}" /></head>
+
+<body class="body">
+
+    <h1> Fake Forum </h1>
+
+    <article class="article">
+
+        <section id="input" class="input">
+            <label id="labelTitle">title</label>
+            <input type="text" name="inputTitle" id="inputTitle"/>
+            <label id = "labelComment">comment</label>
+            <textarea rows="2" class="textComment" name="inputComment" id="inputComment"></textarea>
+        </section>
+
+        <section class = "submit_section">
+            <button id="submit">Submit</button>
+        </section>
+
+        <table id="insert" class= "insert">
+            <tr>
+                <td class = "date"> Date </td>
+                <td class = "title"> Title </td>
+                <td class = "comment"> Body </td>
+            </tr>
+        </table>
+
+    </article>
+
+    <script src= "{% static "jquery-2.1.4.min.js" %}">
+    </script>
+
+    <script type="text/javascript" src= "{% static "fake_post.js" %}" >
+    </script>
+</body>
+
+</html>
