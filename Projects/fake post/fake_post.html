@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 
 <head>
     <title> Fake Forum </title>
@@ -8,24 +7,28 @@
 
 <body class="body">
 
-    <!-- <h1> Fake Forum </h1> -->
+    <h1> Fake Forum </h1>
 
     <article class="article">
-        <section id="insert" class= "insert"</section>
 
-        <section>
+        <section id="input" class="input">
             <label id="labelTitle">title</label>
             <input type="text" name="inputTitle" id="inputTitle"/>
+            <label id = "labelComment">comment</label>
+            <textarea rows="2" class="textComment" name="inputComment" id="inputComment"></textarea>
         </section>
 
-        <section class=input>
-            <label id = "labelComment">comment</label>
-            <input type="text" name="inputComment" id="inputComment"/>
-        </section>
         <section class = "submit_section">
             <button id="submit">Submit</button>
         </section>
 
+        <table id="insert" class= "insert">
+            <tr>
+                <td class = "date"> Date </td>
+                <td class = "title"> Title </td>
+                <td class = "comment"> Body </td>
+            </tr>
+        </table>
 
     </article>
     <script src="jquery-2.1.4.min.js">

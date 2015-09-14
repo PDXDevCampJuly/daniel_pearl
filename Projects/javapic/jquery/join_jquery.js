@@ -15,10 +15,9 @@ function validation(){
             alert("You must enter a email.");
             return false;
         }
-        return true;
-
+        sessionStorage.setItem("name_input", $("input[name=name]".value));
         
-
+        return true;
 }
 /*----------------------Submit and Change name----------------------*/
 
@@ -29,7 +28,7 @@ $("#signup").submit(function(e){
 
     if (validation()){
         console.log(name);
-        sessionStorage.setItem("name_input", $("input[name=name]".value)); //saves name value into a key
+
         window.location.href = "gallery_jquery.html"; //switches to gallery.html
     }
 });

@@ -30,7 +30,7 @@ create_gallery();
 
 /*----------------------Change Name in Tagline----------------------*/
 
-if (name_input === ""){
+if (name_input !== ""){
     tagline.innerHTML = "develop something beautiful, " + name_input;
 } else{
     tagline.innerHTML = "develop something beautiful";

@@ -157,10 +157,10 @@ var newRequest = new XMLHttpRequest(); //Create XMLHttp Request Object
 
 newRequest.onload = function(){
     if(newRequest.status === 200){
-        console.log(newRequest.responseXML);
+        //console.log(newRequest.responseXML);
         var response = newRequest.responseXML;
         var items = response.getElementsByTagName("item");
-        console.log(items);
+        //console.log(items);
         for(var i=0; i<items.length; i++){
             var product = new Product(
                 items[i].getAttribute("name"),
@@ -168,13 +168,10 @@ newRequest.onload = function(){
                 items[i].getElementsByTagName("numInStock")[0].textContent);
             materials.push(product);
 
-            console.log(items[i].getAttribute("price"));
-            console.log(items[i].getAttribute("name"));
-            console.log(items[i].getElementsByTagName('numInStock')[0].textContent);
+            // console.log(items[i].getAttribute("price"));
+            // console.log(items[i].getAttribute("name"));
+            // console.log(items[i].getElementsByTagName('numInStock')[0].textContent);
         }
         populateInventory();
     }
 };
-
-newRequest.open("GET","data/stock.xml", true);
-newRequest.send(null);

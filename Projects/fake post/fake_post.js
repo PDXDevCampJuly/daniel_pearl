@@ -1,38 +1,38 @@
 var submit = document.getElementById("submit");
 var insert_txt = document.getElementById("insert");
-var new_txt = document.createTextNode("hi");
-var submit = document.getElementById("submit");
 
-function validation(){
-
-}
-//Sets value of title input equal to title_value
-var title_value = document.getElementById("labelTitle").value;
+/*-------------------Post function that sends JSON-------------------*/
 
 var onClick = function() {
     //saves location values
-    var title_value = document.getElementById("labelTitle").value;
-    var body_value = document.getElementById("labelComment").value;
+    var title_value = document.getElementById("inputTitle").value;
+    var body_value = document.getElementById("inputComment").value;
 
-
+    //Defines dictionary to be sent
     var content = {}
+
+    //Sets the value of the package equal to the title input
     content.title = title_value;
+    title = content.title;
+
+    //Sets the value of the package equal to the body input
     content.body = body_value;
+    body = content.body;
 
-    new_post(content);
-
-    insert_txt.textContent = title_value;
+    //Calls the post function
+    new_post(title,body);
 };
 
 submit.addEventListener("click", onClick, false);
 
-/*-------------------------------AJAX-------------------------------*/
+/*--------------------Update webpage using DOM----------------------*/
 
 //Inserts table into webpage
 var display_table = function (data) {
-    var entries = data.feed.entry
+    var entries = data.feed.entry;
     var insert = document.getElementById("insert");
 
+    entries.reverse();
 
     for (var i = 0; i < entries.length; i++) {
         var entry = entries[i]
@@ -63,24 +63,36 @@ var display_table = function (data) {
     }
 }
 
-//AJAX get
-$.ajax({
-    type: 'GET',
-    url: "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values?alt=json-in-script",
-    //data: { get_param: 'value' },
-    dataType: 'jsonp',
-    success: display_table
-});
+get_new();
+
+/*-------------------------------AJAX-------------------------------*/
+
+function get_new(){
+    //AJAX get
+    $.ajax({
+        type: 'GET',
+        url: "https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values?alt=json-in-script",
+        //data: { get_param: 'value' },
+        dataType: 'jsonp',
+        success: display_table
+    });
+}
 
 //AJAX post
-function new_post(data){
+function new_post(title,body){
     $.ajax({
         url: "https://docs.google.com/forms/d/1blH7mM6udvlyJ0SrPmbXoNPZg8XCqDQaxHTPrK0HQbA/formResponse",
-        data: data,
+        data: {"entry_434124687": title, "entry_1823097801": body},
         type: "POST",
         dataType: "json",
-        success: function (data) {
-            console.log("Got Response: " + data);
+        statusCode:{
+                0: function(){
+                    location.reload();
+                },
+                200: function(){
+                    console.log("Got Response: " + data);
+                    location.reload();
+                }
         }
     });
 }
