@@ -19,10 +19,10 @@ function create_gallery(){
         var new_image = document.createElement('img'); //creates new image
 
         if (i < 10){
-            new_image.src = "images/pdxcg_0" + i + ".jpg";
+            new_image.src = "/../static/images/pdxcg_0" + i + ".jpg";
 
         } else {
-            new_image.src = "images/pdxcg_" + i + ".jpg";
+            new_image.src = "/../static/images/pdxcg_" + i + ".jpg";
         }
 
         new_list.appendChild(new_image); //append images to list
