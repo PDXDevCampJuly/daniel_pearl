@@ -1,4 +1,5 @@
 from django.conf.urls import include, url
+from table_of_contents.views import table_of_contents
 
 urlpatterns = [
     # Examples:
@@ -8,6 +9,6 @@ urlpatterns = [
     url(r'^about/', include('about.urls')),
     url(r'^javapic_javascript/', include('javapic_javascript.urls')),
     url(r'^javapic_jquery/', include('javapic_jquery.urls')),
-    url(r'^table_of_contents/', include('table_of_contents.urls')),
-    url(r'^zen_mockup/', include('zen_mockup.urls'))
+    url(r'^zen_mockup/', include('zen_mockup.urls')),
+    url(r'^$', table_of_contents, name='table_of_contents.urls')
 ]
