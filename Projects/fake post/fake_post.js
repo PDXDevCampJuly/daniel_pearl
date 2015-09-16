@@ -1,5 +1,4 @@
 var submit = document.getElementById("submit");
-var insert_txt = document.getElementById("insert");
 
 /*-------------------Post function that sends JSON-------------------*/
 
@@ -9,15 +8,15 @@ var onClick = function() {
     var body_value = document.getElementById("inputComment").value;
 
     //Defines dictionary to be sent
-    var content = {}
+    var content = {};
 
     //Sets the value of the package equal to the title input
     content.title = title_value;
-    title = content.title;
+    var title = content.title;
 
     //Sets the value of the package equal to the body input
     content.body = body_value;
-    body = content.body;
+    var body = content.body;
 
     //Calls the post function
     new_post(title,body);
@@ -35,12 +34,12 @@ var display_table = function (data) {
     entries.reverse();
 
     for (var i = 0; i < entries.length; i++) {
-        var entry = entries[i]
+        var entry = entries[i];
 
         //catches the title, body, and timestamp within entry
-        var title = entry.gsx$posttitle.$t
-        var body = entry.gsx$postbody.$t
-        var time = entry.gsx$timestamp.$t
+        var title = entry.gsx$posttitle.$t;
+        var body = entry.gsx$postbody.$t;
+        var time = entry.gsx$timestamp.$t;
 
         //creates tag elements
         var new_tr = document.createElement("tr");
