@@ -39,7 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'forum',
     'about',
-    'javapic_javascript',
+    'javapic',
     'javapic_jquery',
     'table_of_contents',
     'zen_mockup'
