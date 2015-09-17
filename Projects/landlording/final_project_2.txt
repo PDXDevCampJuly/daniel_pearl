@@ -1,6 +1,43 @@
-The final project will be a tool for landlords to organize essential information. The full program will organize information regarding building, apartment, rooms, items and tenant profiles. For this assignment however, I will only organize data within a bedroom.
+Introduction to Project:
 
-A homepage will be constructed that allows users to input data or checkout a room. If the user decides to input data, they will be redirected to a form that contains items within a bedroom. The form will contain the following inputs:
+    The final project will be a tool for landlords to organize essential information. The full program will organize information regarding building, apartment, rooms, items and tenant profiles. For this assignment however, I will start with one bedroom and allow the user to add other rooms and apartments.
+
+    A homepage will be constructed that allows users to add information, update information or view information.
+
+    If a user decides to update information, they will be given the option to update information in a pre-existing building, apartment or room. If the user wants to view information, they will be able to see the details within each building, apartment and room.
+
+Adding new information:
+
+Adding new building:
+
+    If a user decides to add information, they will be given the option to add a new building, new apartment, or new room. If a new building is selected, the user will be prompted to fill out a form containing the following information:
+
+        • Building number (pk)
+        • Building address
+        • Number of units
+        • Occupancy
+        • Notes for additional information
+
+    Once added, this this information will be added to the database.
+
+Adding new apartment number:
+
+    If a new apartment is selected, the user will be prompted to fill out a form containing the following information:
+
+        • Apartment number
+        • number of rooms
+        • category of rooms (bedroom, kitchen, etc.)
+        • Notes for additional information
+
+
+
+
+
+
+
+If the user decides to add new informations, they will be given an option to c
+
+If the user decides to update information, they will be redirected to a form that contains items within a building, apartment # or room. The form will contain the following inputs:
 
     • Room number being updated
     • category of item in room (eg. carpet, walls, trim)
@@ -36,7 +73,7 @@ The user will also be given the option to view the room. In the partial project,
     • smoke detector
     • blinds
 
-The user will be able to click on each of these data points and view the information from the inputs. The room data will either link to an information page or AJAX will be used to display the form inputs on the room page. In addition, the user will be able to view the cost to replace each item and the condition they are in (excluding the tenant information). 
+The user will be able to click on each of these data points and view the information from the inputs. The room data will either link to an information page or AJAX will be used to display the form inputs on the room page. In addition, the user will be able to view the cost to replace each item and the condition they are in (excluding the tenant information).
 
 If time allows, the form input page will contain as many categories as I can get through. Most likely it will just be installation/upgrade:
 
